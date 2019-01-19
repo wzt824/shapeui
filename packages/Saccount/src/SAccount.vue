@@ -1,20 +1,34 @@
 <template>
-  <div id="acountbox">
+  <div id="acountbox" :style="{width,textAlign}">
     <div id="box1">
-    <slot name="account1">年节将至，你还需要一件单品</slot>
-     <slot name="account2">恭喜某某用户，抽到来自某某旗舰店的免单活动</slot>
-     <slot name="account3">毕业季，愿我们会越来越好</slot>
+      <p v-for="(p,i) in data" :key="i" >{{p.title}}</p>
     </div>
     <div id="box2">
     </div>
   </div>
 </template>
 <script>
+
+  import $ from "../../libs/rely/js/jquery"
     export default {
         name: "SAccount",
+      props:{
+          data:{},
+          speed:{},
+          width:{
+            type:String,
+            default:"84%"
+          },
+        textAlign:{
+            type:String,
+            default: "center"
+        }
+
+
+      },
       methods:{
         play(){
-          var speed=20;//文字滚动速度
+          var speed=this.speed;
           var acountbox = document.getElementById('acountbox');
           var box1 = document.getElementById('box1');
           var box2 = document.getElementById('box2');
@@ -27,11 +41,13 @@
             }
           }
           //
-          var mytimer=setInterval(scrollfunc,speed)  //设置定时器
-          acountbox.onmouseover=function() {
+          let mytimer=setInterval(scrollfunc,speed)  //设置定时器
+          acountbox.onmouseenter=function() {
             clearInterval(mytimer)
           };   //鼠标移上时清除定时器达到滚动停止的目的
-          acountbox.onmouseout=function() {mytimer=setInterval(scrollfunc,speed)}  //鼠标移开时重设定时器
+          acountbox.onmouseleave=function() {
+            mytimer=setInterval(scrollfunc,speed)
+          }  //鼠标移开时重设定时器
         }
       },
       mounted(){
