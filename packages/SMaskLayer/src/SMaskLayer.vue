@@ -40,9 +40,7 @@
       methods:{
         playShow(){
           let boxWidth = this.width
-          console.log(boxWidth)
           let boxHeight = this.height
-          console.log(boxHeight)
           function getDirection(x,y){
             //1、先判断方向
             let dis={

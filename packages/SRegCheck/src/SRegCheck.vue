@@ -117,9 +117,6 @@
     color red
     font-size 12px
   .checkBox
-    /*width 325px*/
-    /*height 40px*/
-    /*background #eee*/
     margin-bottom  10px
     border-radius 2px
     position relative
@@ -128,34 +125,22 @@
       position absolute
       left 0
       top 0
-      /*width 40px*/
-      /*height 40px*/
       background url(/static/images/sliderDivBg.jpg) no-repeat
       background-size 40px 40px
       cursor move
       z-index 2
     #colorDiv
       width 0
-      /*height 40px*/
-      /*line-height 40px*/
       position absolute
       top 0
       left 0
       z-index 1
     .textBg
       text-align center
-      /*height 40px*/
-      /*line-height 40px*/
-      /*color #999*/
       opacity 1
       transition all .8s
   .next
-    /*width 310px*/
-    /*height 45px*/
-    /*line-height 45px*/
     margin 10px 0
     border-radius 4px
-    /*background #dfdfdf*/
     border 0
-    /*color #ffffff*/
 </style>

@@ -10,6 +10,7 @@
   </div>
 </template>
 <script>
+  import $ from "../../../packages/libs/rely/js/jquery.min"
     export default {
         name: "SSwipersimple",
         props: {
@@ -46,11 +47,14 @@
             let speed=this.speed;
             let beforepagColor=this.PagColor.beforePagColor;
             let afterpagColor=this.PagColor.afterPagColor;
+            let liDoms = $(".doudouliA li");
+            for(let i=0;i<liDoms.length;i++){
+              liDoms[0].style.backgroundColor =afterpagColor;
+            }
             function showImg(){
-              //  A、改图片
-              //console.log(this)
+              //  A、改图片*
              var _this=this;
-              console.log(_this)
+
               let imgDoms = $("#box .swiper-side");
               for(let i=0;i<imgDoms.length;i++){
                 imgDoms[i].style.zIndex = 0;
@@ -144,7 +148,7 @@
               //2）、外观：
               showImg();
             }
-            window.onload = function(){
+           $(function(){
               changeImg();
               $("#box")[0].onmouseover = stopChange;
               $("#box")[0].onmouseout = changeImg;
@@ -156,7 +160,7 @@
                   goImg(index);
                 }
               }
-            }
+            })
           }
         },
       mounted(){

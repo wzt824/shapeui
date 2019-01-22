@@ -8,8 +8,6 @@
   </div>
 </template>
 <script>
-
-  import $ from "../../libs/rely/js/jquery"
     export default {
         name: "SAccount",
       props:{
@@ -23,8 +21,6 @@
             type:String,
             default: "center"
         }
-
-
       },
       methods:{
         play(){

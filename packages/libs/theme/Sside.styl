@@ -1,0 +1,81 @@
+.slider
+  position:relative
+  //border:1px solid #fff
+  //height 300px
+  text-align center
+  padding-top 130px
+
+.slider-ul
+  list-style: none
+  position absolute
+  right 0px
+  top 65px
+
+.slider-ul li
+  position: relative
+  height: 40px
+  line-height: 40px
+  margin-top: 10px
+  width: 40px
+
+.slider-ul li a
+  display: inline-block
+  width: 40px
+  height: 40px
+  text-align: center
+  line-height: 40px
+  color: white
+  position: absolute
+  left: 0
+  top: 0
+  font-size: 25px
+  text-decoration: none
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, .3)
+  transition: all 0.6s
+  z-index: 6
+
+.slider-shop .slider-title
+  background-color: #333
+
+.slider-shop .slider-title:before
+  background-color: #333
+
+.slider-title
+  position: absolute
+  left: 0px
+  bottom: 5px
+  width: 70px
+  height: 40px
+  line-height: 40px
+  text-align: center
+  color: white
+  z-index: 1
+  opacity: 0
+  font-size: 12px
+  transition: all 0.6s
+
+/* 弹框有个尖角，想让它为正方形再旋转45°，之后让这个尖角的颜色与背景颜色一样 */
+.slider-title:before
+  content: ''
+  display: block
+  width: 10px
+  height: 10px
+  position: absolute
+  right: -5px
+  top: 14px
+  background-color: #fff
+  transform: rotate(45deg)
+
+.slider-ul li:hover .slider-title
+  opacity: 1
+  left: -80px
+
+
+
+//字体小图标引入样式
+.icon
+  width: 1em
+  height: 1em
+  vertical-align: -0.15em
+  fill: currentColor
+  overflow: hidden

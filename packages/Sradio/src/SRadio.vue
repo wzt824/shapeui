@@ -1,6 +1,6 @@
 <template>
     <div>
-      <input type="radio"> 单选
+      <input type="radio" :type="type" :style="{width,height,verticalAlign}"> 单选
     </div>
 </template>
 
@@ -10,7 +10,19 @@
         props:{
           type:{
             type:String,
-            default:""
+            default:"radio"
+          },
+          width:{
+            type:String,
+            default: "18px"
+          },
+          height:{
+            type:String,
+            default: "18px"
+          },
+          verticalAlign:{
+            type:String,
+            default:"middle"
           }
         }
     }

@@ -1,7 +1,7 @@
 <template>
   <div class="tableBox">
-    <table id="myTable" border="1" cellpadding="0" cellspacing="0">
-      <tr :style="{backgroundColor:backgroundOne}">
+    <table id="myTable" border="1" cellpadding="0" cellspacing="0" :style="{color,fontSize:fontSize+'px'}">
+      <tr>
         <th width="20%" v-for="(p,ind) in productTitle">{{p}}</th>
       </tr>
       <tr v-for="(a,idx) in productData" >
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-  import $ from "jquery"
+  import $ from "../../libs/rely/js/jquery.min.js"
     export default {
         name: "STablePage",
       props:{
@@ -39,26 +39,28 @@
           type:Number,
           default:5
         },
-        //表头颜色
-        backgroundOne:{
-          type:String,
-          default: "#7bdbf3"
-        },
         //单行
         backgroundTwo:{
           type:String,
-          default: "#b1e7f5"
+          default: "#fff"
         },
         //偶数行
-        // backgroundThree:{
-        //   type:String,
-        //   default: "#7bdbf3"
-        // }
+        backgroundThree:{
+          type:String,
+          default: "#eee"
+        },
+        color:{
+          type:String,
+          default:"#000"
+        },
+        fontSize:{
+          type:String,
+          default:"14"
+        }
 
       },
       methods:{
         tablePaging(){
-          console.clear()
           let page = this.pageNum
           var pageSize = page;//显示每页显示的数据
           var curPage = 0; //当前页面
@@ -68,8 +70,11 @@
           var sumPage ; //table总页数
           var begin ;//开始
           var end ; //结束
-
+           let bgone = this.backgroundTwo
+          let bgtwo = this.backgroundThree
           $(function () {
+            $("#myTable tr:odd").css("background-color",bgone);
+            $("#myTable tr:even").css("background-color",bgtwo);
             sumLen = $("#myTable tr").length - 1;// 求这个表的总行数，剔除第一行表头
             sumPage = sumLen % pageSize == 0 ? sumLen / pageSize : Math.floor(sumLen / pageSize) +1 ;//根据记录条数，计算页数
             curPage = 1;// 设置当前为第一页
@@ -178,11 +183,7 @@
       },
       created(){
         this.tablePaging()
-      },
-      mounted(){
-          console.log(this.productData)
-      },
-
+      }
     }
 </script>
 
@@ -202,7 +203,6 @@
     border:solid #ddd
     font-size 14px
     border-width:1px 0px 0px 1px
-    color #908c88
     i
       font-size 24px
       color #908c88
@@ -259,9 +259,9 @@
         .proPutaway
           background #72b63f
     tr:nth-child(2n)
-      background #7bdbf3
+      /*background #7bdbf3*/
     tr:first-child
-      background #7bdbf3
+      /*background #7bdbf3*/
   .tableBottom
     width: 100%
     height: 55px

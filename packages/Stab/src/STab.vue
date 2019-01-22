@@ -53,5 +53,5 @@
 </script>
 
 <style scoped lang="stylus">
-  @import "../../libs/theme/tab.styl"
+  @import "../../libs/theme/Stab.styl"
 </style>

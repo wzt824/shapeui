@@ -1,0 +1,29 @@
+#fallbox{
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#smallfall{
+  margin:0 auto;
+  overflow:hidden;
+  height:auto;
+}
+#fallbox ul{
+  list-style:none;
+  padding:10px;
+  float: left;
+}
+#fallbox ul li{
+  border: 1px solid #cccccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 3px 8px 8px #888888;
+}
+#fallbox ul img{
+  width:100px;
+  height:100px;
+  display:block;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #cccccc;
+}
